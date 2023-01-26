@@ -17,6 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('ViewDocs', function () {
+    return view('ViewDocs');
+});
+
+Route::get('TableDocs', function () {
+    return view('TableDocs');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
