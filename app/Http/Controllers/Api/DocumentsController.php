@@ -17,9 +17,9 @@ class DocumentsController extends Controller
         $documents_path = $request->file('documents')->store('documents', 'public');
 
         $data = Documents::create([
+           
             'documents' => $documents_path,
         ]);
-
         return response($data, Response::HTTP_CREATED);
     }
 }
