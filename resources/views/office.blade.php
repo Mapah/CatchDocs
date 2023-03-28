@@ -1,9 +1,8 @@
 @extends('layouts.admin-dash-layout')
-@section('title','Dashboard')
+@section('title','office')
 
 @section('content')
 
-Dashboard
-
+office
 
 @endsection

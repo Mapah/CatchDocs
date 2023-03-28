@@ -16,8 +16,15 @@ return new class extends Migration
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
+            $table->text('description');
             $table->string('path');
+            $table->string('title');
+            $table->string('source');
+            $table->string('text');
+            $table->string('tags');
+            $table->text('annotations');
+            $table->unsignedBigInteger('offices_id');
+            $table->foreign('offices_id')->references('id')->on('offices')->onDelete('cascade');
             $table->timestamps();
             
         });
