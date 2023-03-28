@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\AcceuilController;
 use App\Http\Controllers\userController;
