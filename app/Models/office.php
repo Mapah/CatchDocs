@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class office extends Model
+class Office extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'name',
-        'description',
-    ];
+        'admin_id',
+        'description'
+    ];  
 }

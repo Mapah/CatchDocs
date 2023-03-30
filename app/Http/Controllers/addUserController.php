@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\user;
 use App\Models\office;
 use App\Models\administration;
+use App\Models\Documents;
 use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -70,10 +71,37 @@ class adduserController extends Controller
     function modifyadminis(Request $request) {
         $administration =  administration::find($request->id);
 
-       
         $administration->name = $request->name;
         $administration->description = $request->description;
         $administration->save();
-        return redirect('http://127.0.0.1:8000/administration')->back()->with('flash_message','administration update!');
+        return redirect()->back()->with('flash_message','administration update!');
+    }
+    function documents(){
+        $data=Documents::get();
+        return view('document',compact('data'));
+    }
+    function addDocument(){
+        return view('addDocment');
+    }
+    function save_addDocument(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'description'=>'required',
+            'path'=>'required',
+            'title'=>'required',
+            'tags'=>'required',
+            'annotations'=>'required',
+            'offices_id'=>'required',
+        ]);
+        $req = new user;
+        $req->name = $request->name;
+        $req->description = $request->description;
+        $req->path = $request->path;
+        $req->title = $request->title;
+        $req->tags = $request->tags;
+        $req->annotations = $request->annotations;
+        $req->offices_id = $request->offices_id;
+        $req->save();
+        return redirect()->back()->with('success','Document added!');
     }
 }

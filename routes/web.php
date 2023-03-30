@@ -2,10 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\AcceuilController;
 use App\Http\Controllers\userController;
-use App\Models\user;
-
+use App\Http\Controllers\adduserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -75,6 +73,9 @@ Route::get('modifyOffice', function () {
 Route::get('modifyAdministration', function () {
     return view('modifyAdministration');
 });
+Route::get('homepage', function () {
+    return view('homepage');
+});
 Auth::routes();
 
 Route::get('/home',  [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -85,7 +86,9 @@ Route::post('/ajout',[App\Http\Controllers\addUserController::class, 'adduser'])
 Route::post('update',[App\Http\Controllers\addUserController::class, 'modify'])->name('modify');
 Route::get('delete/{id}',[App\Http\Controllers\addUserController::class, 'delete'])->name('delete');
 Route::get('/user',[userController::class,'index']);
-// Route::get('/', [AcceuilController::class, 'index']);
+Route::get('/documents',[adduserController::class,'documents']);
+Route::get('/addDocument',[adduserController::class,'addDocument']);
+Route::POST('/save_addDocument',[adduserController::class,'save_addDocument']);
 Route::prefix('Acceuil')->namespace('App\Http\Controllers\AcceuilController')->group(function(){
     Route::get('/','AcceuilController@index')->name('Acceuil');
 });
