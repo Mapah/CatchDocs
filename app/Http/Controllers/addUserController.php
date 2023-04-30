@@ -36,7 +36,7 @@ class adduserController extends Controller
     }
     function modifyUser ($id) {
         $user =  User::find($id);
-        return view('modifyUser',compact('user'));
+        return view('views.modifyUser',compact('user'));
     }
 
     function modify (Request $request) {
@@ -83,6 +83,7 @@ class adduserController extends Controller
     function addDocument(){
         return view('addDocment');
     }
+    
     function save_addDocument(Request $request){
         $request->validate([
             'name'=>'required',

@@ -11,10 +11,16 @@
             <form action="{{url('update')}}" method="POST" enctype="multipart/form-data">
                 {!!csrf_field()!!}
                 <label for="">name</label><br>
-                <input type="text" name="name" id="name" class="form-control" value="{{$office->name}}"><br>
-                <input type="hidden" name="id" id="id" class="form-control" value="{{$office->id}}"><br>
+                <input type="text" name="name" id="name" class="form-control" 
+                {{-- value="{{$office->name}}" --}}
+                ><br>
+                <input type="hidden" name="id" id="id" class="form-control" 
+                {{-- value="{{$office->id}}" --}}
+                ><br>
                 <label for="">description</label><br>
-                <input type="text" name="description" id="description" class="form-control" value="{{$office->name}}"><br>
+                <input type="text" name="description" id="description" class="form-control" 
+                {{-- value="{{$office->name}}" --}}
+                ><br>
 
 
                 <input type="submit" value="save" class="btn btn-success"><br>
