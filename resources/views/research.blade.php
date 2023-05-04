@@ -13,45 +13,57 @@
                 font-family: 'Nunito', sans-serif;
                 
             }
-            .container{
+            .bgimg{
+                position: absolute;
+                z-index: 1;
+             }
+             .index{
+                background-color: blue;
+                position: absolute;
+                z-index: 2;
                 margin:0 auto;
                 margin-top: 5%;
+                margin-left: 16%;
                 border-radius: 5px;
                 box-shadow:0 0 6px black;
                 transition: box-shadow 0.3s ease-out;
-                cursor: pointer;
-                text-align: center;                
-                background-color: violet;
+                text-align: center;  
+                color: white;
+            }
+            .container{
+                margin:0 auto;
             }
             .align{
-                margin-left: 7%;
-                display: inline-block;         
+                margin-left: 7%;  
+                      
             }
-            button{
+            .button{
                 border-radius: 5px;
                 box-shadow:0 0 6px black;
                 transition: box-shadow 0.3s ease-out;
                 cursor: pointer;
                 
             }
+
         </style>
     </head>
     <body >
         <main>
-        <img src="/images/research.png" alt="research">
-            <div class="container text-black">
-                <h1 class="heading" style="border-style: solid; border-width: 20px 10px 5px 2px;">Welcome To CATCHDOCS </h1><br><br>
-                <div>
+            <img  src="{{asset('images/research.jpg')}}" alt="acceuil" class="bgimg" style="width:100%; height:100%;">
+            <div class="container text-black ">
+                <div class="index">
+                    <h1 class="heading" style="border-style: solid; border-width: 20px 10px 5px 2px;">Welcome To CATCHDOCS </h1><br><br>
                     <h2 class="heading">Enter a doccument name to make a research !</h2><br>
                     <form class="form-inline my-2 my-lg-0">
-                            <div class="align" style="margin-right:20%;"><input class="form-control mr-sm-2" style=" padding:20%; padding-left:60%; padding-right:60%" type="text" placeholder="Enter document name" aria-label="Search"></div>             
-                            <div class="align"><button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button></div>
-                        </form><br><br><br>                </div>
+                        <div class="align" style="margin-right:30%;"><input class="form-control mr-sm-2" style=" padding:20%; padding-left:60%; padding-right:60%" type="text" placeholder="Enter document name" aria-label="Search"></div>             
+                        <div class="align"><button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button></div>
+                    </form><br><br><br>                
+                </div>
             </div><br><br><br>
-            <div style="background-color: violet; padding:1%; box-shadow:0 0 6px black; transition: box-shadow 0.3s ease-out; " >
-            <a href="http://127.0.0.1:8000/acceuil"><button class="align">Home</button></a>
-            <a href="http://127.0.0.1:8000/research"><button class="align">Research</button></a>        
-            <a href="http://127.0.0.1:8000/consulter"><button class="align">Consult</button></a>
+            <div  style="background-color: blue; padding:1%; box-shadow:0 0 6px black; transition: box-shadow 0.3s ease-out; z-index: 2; position: absolute; margin-top: 30%; width:100%" >
+                <a href="http://127.0.0.1:8000"><button class="align btn btn-secondary my-2 my-sm-0">Home</button></a>
+                <a href="http://127.0.0.1:8000/research"><button class="align btn btn-secondary my-2 my-sm-0">Research</button></a>        
+                <a href="http://127.0.0.1:8000/consulter"><button class="align btn btn-secondary my-2 my-sm-0">Consult</button></a>
             </div>
         </main>
     </body>

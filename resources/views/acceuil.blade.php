@@ -11,11 +11,50 @@
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
             integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: 'Nunito', sans-serif;
+                background-image: url('acceuil.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+            
+            .bgimg{
+                position: absolute;
+                z-index: 1;
+             }
+             .bgimg2{
+                position: absolute;
+                z-index: 1;
+                margin-top: 63%;
+             }
+            .wellcome{
+                position: absolute;
+                z-index: 2;
+                padding-top: 3%;
+            }
+            .descriptuion1{
+                position: absolute;
+                z-index: 2;
+                margin-top: 45%;
+                font-style: italic;
+                color: black;
+            }   
+            
+            .description{
+                position: absolute;
+                z-index: 2;
+                margin-top: 70%;
+                font-style: italic;            }   
+        </style>
     </head>
     <body style="padding-top: 5rem; padding-bottom:5%;">
-            <nav class="navbar navbar-expand-md text-white navbar-light  fixed-top shadow p-3 mb-5 rounded" style="background-color:violet;">
+            <nav class="navbar navbar-expand-md text-white navbar-light  fixed-top shadow p-3 mb-5 rounded" style="color: purple;" > 
                 <div class="container">
-                    
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
                             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -24,30 +63,31 @@
                     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="http://127.0.0.1:8000/consulter" style="font-family:italics; color:white;"><h4>Consult</h4></a>
+                                <a class="nav-link" href="http://127.0.0.1:8000/consulter" style="font-family:italics; color:black;"><h4>Consult</h4></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="http://127.0.0.1:8000/research" style="font-family:italics; color:white;"><h4>Research</h4></a>
+                                <a class="nav-link" href="http://127.0.0.1:8000/research" style="font-family:italics; color:black;"><h4>Research</h4></a>
                             </li>
                         </ul>
-
+<!-- 
                         <form class="form-inline my-2 my-lg-0">
                             <i class="nav-icon fas fa-user"></i>
                             <a href="#" style="font-family:italics; color:white;"><h5>Login</h5></a>
-                        </form>
+                        </form> -->
                     </div>
                 </div>
             </nav>
-
+        <img  src="{{asset('images/acceuil.jpg')}}" alt="acceuil" class="bgimg" style="width:100%; height:100%;">
         <main role="main" class="container">
-
-            <div style="padding: 3rem 1.5rem;">
-            <img src="{{asset('images/acceuil.jpg')}}" alt="acceuil" style="width:70px; height:70px">
-                <h1 class="heading" style="border-style: solid; border-width: 20px 10px 5px 2px;">Welcome To CATCHDOCS </h1><br><br>
-
-                <h1>Home</h1><br><br><br><br><br><br><br>
+            <div class="wellcome">
+                <h1 class="heading" style=" font-style: italic; color:purple"><em>Welcome To CATCHDOCS </em></h1><br><br>
+                <h1 style=" font-style: bold;">Home Page</h1><br><br><br><br><br><br><br>
+            </div>
+            <div class="descriptuion1">
                 <h3>CatchDocs</h3>
                 <p>description</p><br><br>
+            </div>
+            <div class="description" style="padding: 3rem 1.5rem; margin: top 100%;">
                 <h3>Objectifs And Content</h3>
                 <p>description</p><br><br>
                 <h3>Our Mission</h3>
