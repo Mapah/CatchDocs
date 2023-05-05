@@ -19,10 +19,10 @@ use Illuminate\Http\Client\Request as ClientRequest;
 |
 */
 
-<<<<<<< HEAD
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+// <<<<<<< HEAD
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
 Route::post('/login', function(ClientRequest $request){
@@ -55,21 +55,21 @@ Route::get('/logout', function(){
 
 Route::get('login', function () {
     return view('views.login');
-=======
+// =======
 Route::get('/', function () {
     return view('acceuil');
 });
 
 Route::get('admin-dash-layout', function () {
     return view('admin-dash-layout');
->>>>>>> mapah
+// >>>>>>> mapah
 });
 
 Route::get('settings', function () {
     return view('views.settings');
 });
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
 Route::get('office', function () {
     return view('views.office');
 });
@@ -80,10 +80,10 @@ Route::get('administration', function () {
 
 Route::get('acceuil', function () {
     return view('views.acceuil');
-=======
+// =======
 Route::get('welcome', function () {
     return view('welcome');
->>>>>>> mapah
+// >>>>>>> mapah
 });
 
 Route::get('consulter', function () {
@@ -93,7 +93,7 @@ Route::get('consulter', function () {
 Route::get('research', function () {
     return view('views.research');
 });
-<<<<<<< HEAD
+// <<<<<<< HEAD
 Route::get('addUser', function () {
     return view('views.addUser');
 });
@@ -117,7 +117,7 @@ Auth::routes();
 
 Route::get('modifyUser/{id}',  [App\Http\Controllers\addUserController::class, 'modifyUser'])->name('modifyUser');
 Route::post('/ajout',[App\Http\Controllers\addUserController::class, 'adduser'])->name('ajout');
-=======
+// =======
 
 Route::get('homepage', function () {
     return view('homepage');
@@ -130,7 +130,7 @@ Route::get('/user',[userController::class,'user'] );
 Route::get('/addUser',[addUserController::class,'addUser']);
 Route::post('/ajout',[App\Http\Controllers\addUserController::class, 'saveuser'])->name('ajout');
 Route::get('modifyUser/{id}',  [App\Http\Controllers\addUserController::class, 'modifyUser'])->name('modifyUser');
->>>>>>> mapah
+// >>>>>>> mapah
 Route::post('update',[App\Http\Controllers\addUserController::class, 'modify'])->name('modify');
 Route::get('delete/{id}',[App\Http\Controllers\addUserController::class, 'delete'])->name('delete');
 
@@ -186,4 +186,3 @@ Route::prefix('Acceuil')->namespace('App\Http\Controllers\AcceuilController')->g
 // });
 
 // Route::get('/user',[userController::class,'user'] );
-
