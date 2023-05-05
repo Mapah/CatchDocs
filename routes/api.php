@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Administrators;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\OfficeController;
-use App\Http\Controllers\DocumentsController;
+use App\Http\Controllers\api\DocumentsController;
 
 
 /*

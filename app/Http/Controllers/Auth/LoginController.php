@@ -68,18 +68,18 @@ class LoginController extends Controller
             // Log::info("user");
             // Log::info($user);
 
-            // return response([
-            //     'id' => $user->id,
-            //     'name' => $user->name,
-            //     'email' => $user->email,
-            //     'profile' => $user->profile,
-            //     'office_id' => $user->office_id,
-            //     'haveRole' => $user ->haveRole,
-            //     'created_at' => $user->created_at,
-            //     'update_at' => $user->update_at,
-            //     'token' => $token->accessToken,
-            //     // 'token_expires_at' => $token->token->expires_at,
-            // ], 200);
+            return response([
+                'id' => $user->id,
+                'name' => $user->name,
+                'email' => $user->email,
+                'profile' => $user->profile,
+                'office_id' => $user->office_id,
+                'haveRole' => $user ->haveRole,
+                'created_at' => $user->created_at,
+                'update_at' => $user->update_at,
+                'token' => $token->accessToken,
+                // 'token_expires_at' => $token->token->expires_at,
+            ], 200);
         }  
     }
 }
