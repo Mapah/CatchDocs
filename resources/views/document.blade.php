@@ -1,6 +1,5 @@
 @extends('layouts.admin-dash-layout')
 @section('title','Documents')
-
 @section('content')
 
 <div class="container"><br><br><br>
@@ -25,8 +24,21 @@
                 </div>
                 @enderror
                 <div class="card-header"> Table Of Documents</div>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" style=" width:10%">
+                    <option selected>Office</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+
+                <select id="year" style=" width:10%;">
+                    <option value="hide">Year</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2011">2011</option>
+                </select>
                 <div class="card-body">
-                    <a href="http://127.0.0.1:8000/addDocument" class="btn btn-success btn-sm">Add New</a><br><br>
+                    <!-- <a href="http://127.0.0.1:8000/addDocument" class="btn btn-success btn-sm">Add New</a><br><br> -->
                     <div class="table-responsive">
                     @if(Session::has('success'))
                         <div class="alert alert-succes" role="alert">
