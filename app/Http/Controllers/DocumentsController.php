@@ -19,7 +19,7 @@ class DocumentsController extends Controller
 
     public function FileStore(Request $request)
     {
-        $validator =  Validator::make($request->all(),[            
+        $validator =  Validator::make($request->all(),[         
             'documents' => 'required|mimes:pdf|max:5000',
             'description'=> 'required|max:2000',
             'name'=> 'required|max:2000',
@@ -36,9 +36,7 @@ class DocumentsController extends Controller
             return response()->json($validator->failed(),400);
          }
       
-
          $documents_path = $request->file('documents')->store('documents', 'public');
-       
 
          $data = Documents::create([
              'name'=> $request->name,
