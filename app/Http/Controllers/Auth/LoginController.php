@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Log;
 
 class LoginController extends Controller
 {
@@ -64,19 +65,21 @@ class LoginController extends Controller
             $user = Auth::user();
             $token = $user->createToken($user->name);
     
-            return response([
-                'id' => $user->id,
-                'name' => $user->name,
-                'email' => $user->email,
-                'profile' => $user->profile,
-                'haveRole' => $user ->haveRole,
-                'created_at' => $user->created_at,
-                'update_at' => $user->update_at,
-                'token' => $token->accessToken,
-                'token_expires_at' => $token->token->expires_at,
-            ], 200);
-        }
+            // Log::info("user");
+            // Log::info($user);
 
-  
+            // return response([
+            //     'id' => $user->id,
+            //     'name' => $user->name,
+            //     'email' => $user->email,
+            //     'profile' => $user->profile,
+            //     'office_id' => $user->office_id,
+            //     'haveRole' => $user ->haveRole,
+            //     'created_at' => $user->created_at,
+            //     'update_at' => $user->update_at,
+            //     'token' => $token->accessToken,
+            //     // 'token_expires_at' => $token->token->expires_at,
+            // ], 200);
+        }  
     }
 }
