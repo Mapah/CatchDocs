@@ -16,6 +16,7 @@ class Documents extends Model
         'source',
         'text',
         'tags',
+        'offices_id',
         'annotations'
     ];
 }
