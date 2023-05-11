@@ -57,3 +57,13 @@ Route::post('/offices',[OfficeController::class,'OfficeShow']);
 Route::put('/offices',[OfficeController::class,'OfficeUpdate']);
 
 Route::delete('/offices',[OfficeController::class,'OfficeDestroy']);
+
+// Route::get('/documents',[adduserController::class,'documents']);
+// Route::get('/addDocument',[adduserController::class,'addDocument']);
+// Route::POST('/save_addDocument',[adduserController::class,'save_addDocument']);
+// Route::get('modifyDocument',[App\Http\Controllers\addUserController::class, 'modifyDocument'])->name('modifyDocument');
+// Route::post('updateDocument',[App\Http\Controllers\addUserController::class, 'updateDocument'])->name('updateDocument');
+// Route::get('deleteDocument/{id}',[App\Http\Controllers\addUserController::class, 'deleteDocument'])->name('deleteDocument');
+// Route::get('/administration',[addUserController::class,'administration']);
+
+

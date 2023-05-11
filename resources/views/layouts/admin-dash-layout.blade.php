@@ -89,7 +89,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <a href="http://127.0.0.1:8000/administration" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
-                  Administration
+                  Administrator
                 </p>
               </a>
             </li>

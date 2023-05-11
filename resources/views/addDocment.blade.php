@@ -17,7 +17,7 @@
                 {!!csrf_field()!!}
                 <div class="md-3">
                 <label for="">name</label><br>
-                <input type="text" name="name" id="name" class="form-control"><br>
+                <input type="text" name="name" id="name" class="form-control" value="{{old('name')}}"><br>
                 @error('name')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}  
@@ -26,7 +26,7 @@
                 </div>
                 <div class="md-3"></div>
                 <label for="">description</label><br>
-                <input type="text" name="description" id="description" class="form-control"><br>
+                <input type="text" name="description" id="description" class="form-control" value="{{old('description')}}"><br>
                 @error('description')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}  
@@ -34,7 +34,7 @@
                 @enderror
                 <div class="md-3"></div>
                 <label for="">path</label><br>
-                <input type="text" name="path" id="path" class="form-control"><br>
+                <input type="text" name="path" id="path" class="form-control" value="{{old('path')}}"><br>
                 @error('path')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}  
@@ -42,7 +42,7 @@
                 @enderror
                 <div class="md-3">
                 <label for="">title</label><br>
-                <input type="text" name="title" id="title" class="form-control"><br>
+                <input type="text" name="title" id="title" class="form-control" value="{{old('title')}}"><br>
                 @error('title')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}  
@@ -52,7 +52,7 @@
 
                 <div class="md-3">
                 <label for="">tags</label><br>
-                <input type="text" name="tags" id="tags" class="form-control"><br>
+                <input type="text" name="tags" id="tags" class="form-control" value="{{old('tags')}}"><br>
                 @error('tags')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}  
@@ -62,7 +62,7 @@
 
                 <div class="md-3">
                 <label for="">annotations</label><br>
-                <input type="text" name="annotations" id="annotations" class="form-control"><br>
+                <input type="text" name="annotations" id="annotations" class="form-control" value="{{old('annotations')}}"><br>
                 @error('annotations')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}  
@@ -71,7 +71,7 @@
                 </div>
                 <div class="md-3">
                 <label for="">offices_id</label><br>
-                <input type="text" name="offices_id" id="offices_id" class="form-control"><br>
+                <input type="text" name="offices_id" id="offices_id" class="form-control" value="{{old('offices_id')}}"><br>
                 @error('offices_id')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}  

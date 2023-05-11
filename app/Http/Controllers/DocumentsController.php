@@ -12,7 +12,7 @@ class DocumentsController extends Controller
     public function index()
     {
         $documents = Documents::all();
-
+        
         return response()->json($documents,200);
     }
 

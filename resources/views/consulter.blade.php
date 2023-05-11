@@ -13,6 +13,10 @@
                 font-family: 'Nunito', sans-serif;
 
             }
+            .bgimg{
+                position: absolute;
+                z-index: 1;
+             }
             .container{
                 margin:0 auto;
                 margin-top: 5%;
@@ -21,7 +25,7 @@
                 transition: box-shadow 0.3s ease-out;
                 cursor: pointer;
                 text-align: center;                
-                background-color: violet;
+                background-color: lightgray;
             }
             .heading{
                 text-align: center;
@@ -43,12 +47,13 @@
             .align{
                 margin:2%;
                 display: inline-block; 
-                      
+
             }
         </style>
     </head>
     <body >
         <main>
+        <img  src="{{asset('images/consult.PNG')}}" alt="acceuil" class="bgimg" style="width:100%; height:100%;">
             <div class="container text-white">
                 <h1 class="heading">Welcome To CATCHDOCS </h1>
                 <div>
@@ -58,35 +63,37 @@
                         </form>
                 </div><br><br>
             </div><br><br><br>
-            <div style="background-color: violet; box-shadow:0 0 6px black; transition: box-shadow 0.3s ease-out; " >
-            <a href="http://127.0.0.1:8000/acceuil"><button class="align">Home</button></a>
-            <a href="http://127.0.0.1:8000/research"><button class="align">Research</button></a>        
-            <a href="http://127.0.0.1:8000/consulter"><button class="align">Consult</button></a>
+            <div style="background-color: lightgray; box-shadow:0 0 6px black; transition: box-shadow 0.3s ease-out; " >
+                <a href="http://127.0.0.1:8000"><button class="align">Home</button></a>
+                <a href="http://127.0.0.1:8000/research"><button class="align">Research</button></a>        
+                <a href="http://127.0.0.1:8000/consulter"><button class="align">Consult</button></a>
             </div><br><br><br>
-            <div class="align" style="width: 25%; text-align:center; font-style: italic;">
-            <div style="width: 99%; background-color:violet; box-shadow:0 0 6px black; transition: box-shadow 0.3s ease-out; "><h4>users</h4></div>
-            <div style="width: 99%; background-color:violet; box-shadow:0 0 6px black; transition: box-shadow 0.3s ease-out; "><h4>Documents</h4></div>
-            <div style="width: 99%; background-color:violet; box-shadow:0 0 6px black; transition: box-shadow 0.3s ease-out; "><h4>offices</h4></div>
-            <div style="width: 99%; background-color:violet; box-shadow:0 0 6px black; transition: box-shadow 0.3s ease-out; "><h4>department</h4></div>
-                <div style="width: 99%; background-color:violet; box-shadow:0 0 6px black; transition: box-shadow 0.3s ease-out; "><h4>Key words</h4></div>
-            </div>
-            <div class="align" style="width: 50%; border-radius: 5px; box-shadow:0 0 6px black; transition: box-shadow 0.3s ease-out; ">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>description</th>
-                            <th>title</th>
-                            <th>View Ditels</th>
-                            <th>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
-                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-                                    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
-                                </svg>
-                            </th>
-                        </tr>
-                    </thead>
-                </table> 
+            <div  class="index">
+                <div class="align" style="width: 25%; text-align:center; font-style: italic;">
+                    <div style="width: 99%; background-color:violet; box-shadow:0 0 6px black; transition: box-shadow 0.3s ease-out; "><h4>users</h4></div>
+                    <div style="width: 99%; background-color:violet; box-shadow:0 0 6px black; transition: box-shadow 0.3s ease-out; "><h4>Documents</h4></div>
+                    <div style="width: 99%; background-color:violet; box-shadow:0 0 6px black; transition: box-shadow 0.3s ease-out; "><h4>offices</h4></div>
+                    <div style="width: 99%; background-color:violet; box-shadow:0 0 6px black; transition: box-shadow 0.3s ease-out; "><h4>department</h4></div>
+                    <div style="width: 99%; background-color:violet; box-shadow:0 0 6px black; transition: box-shadow 0.3s ease-out; "><h4>Key words</h4></div>
+                </div>
+                <div class="align" style="width: 50%; border-radius: 5px; box-shadow:0 0 6px black; transition: box-shadow 0.3s ease-out; ">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>description</th>
+                                <th>title</th>
+                                <th>View Ditels</th>
+                                <th>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                        <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                                    </svg>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table> 
+                </div>
             </div>
         </main>
     </body>
