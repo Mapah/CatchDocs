@@ -1,6 +1,5 @@
 @extends('layouts.admin-dash-layout')
 @section('title','Documents')
-
 @section('content')
 
 <div class="container"><br><br><br>
@@ -33,7 +32,13 @@
                 </select>
                 <div class="card-body">
                     <!-- <a href="http://127.0.0.1:8000/addDocument" class="btn btn-success btn-sm">Add New</a><br><br> -->
+                    <!-- <a href="http://127.0.0.1:8000/addDocument" class="btn btn-success btn-sm">Add New</a><br><br> -->
                     <div class="table-responsive">
+                    @if(Session::has('success'))
+                        <div class="alert alert-succes" role="alert">
+                            {{Session::get('success')}}  
+                        </div>
+                     @endif
                     @if(Session::has('success'))
                         <div class="alert alert-succes" role="alert">
                             {{Session::get('success')}}  
@@ -64,6 +69,7 @@
                                 <td>{{$item->tags}} <br></td>
                                 <td>{{$item->annotations}} <br></td>
                                 <td>{{$item->offices_id}} <br></td>
+                                <td><a href="{{ url('modifyDocument',$item->id)}}" class="btn btn-primary m-2">Edit</a><a href="{{url('deleteDocument',$item->id)}}" class="btn btn-danger">Delete</a></td>
                                 <td><a href="{{ url('modifyDocument',$item->id)}}" class="btn btn-primary m-2">Edit</a><a href="{{url('deleteDocument',$item->id)}}" class="btn btn-danger">Delete</a></td>
                                 </tr>
                                 @endforeach

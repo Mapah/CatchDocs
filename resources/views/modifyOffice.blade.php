@@ -12,6 +12,8 @@
                 {!!csrf_field()!!}
                 <input type="hidden" name="id" id="id" class="form-control" value="{{$data->id}}"><br>
 
+                <input type="hidden" name="id" id="id" class="form-control" value="{{$data->id}}"><br>
+
                 <label for="">name</label><br>
                 <input type="text" name="name" id="name" class="form-control" value="{{$data->name}}"><br>   
                 <label for="">admin_id</label><br>

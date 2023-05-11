@@ -56,6 +56,7 @@
     </head>
     <body style="padding-top: 5rem; padding-bottom:5%;">
             <nav class="navbar navbar-expand-md text-white navbar-light  fixed-top shadow p-3 mb-5 rounded" style="color: purple;" > 
+            <nav class="navbar navbar-expand-md text-white navbar-light  fixed-top shadow p-3 mb-5 rounded" style="color: purple;" > 
                 <div class="container">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
                             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,15 +67,19 @@
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
                                 <a class="nav-link" href="http://127.0.0.1:8000/consulter" style="font-family:italics; color:black;"><h4>Consult</h4></a>
+                                <a class="nav-link" href="http://127.0.0.1:8000/consulter" style="font-family:italics; color:black;"><h4>Consult</h4></a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="http://127.0.0.1:8000/research" style="font-family:italics; color:black;"><h4>Research</h4></a>
                                 <a class="nav-link" href="http://127.0.0.1:8000/research" style="font-family:italics; color:black;"><h4>Research</h4></a>
                             </li>
                         </ul>
 <!-- 
+<!-- 
                         <form class="form-inline my-2 my-lg-0">
                             <i class="nav-icon fas fa-user"></i>
                             <a href="#" style="font-family:italics; color:white;"><h5>Login</h5></a>
+                        </form> -->
                         </form> -->
                     </div>
                 </div>
@@ -88,8 +93,15 @@
                 <h1 style=" font-style: bold;">Home Page</h1><br><br><br><br><br><br><br>
             </div>
             <div class="descriptuion1">
+            <div class="wellcome">
+                <h1 class="heading" style=" font-style: italic; color:purple"><em>Welcome To CATCHDOCS </em></h1><br><br>
+                <h1 style=" font-style: bold;">Home Page</h1><br><br><br><br><br><br><br>
+            </div>
+            <div class="descriptuion1">
                 <h3>CatchDocs</h3>
                 <p>description</p><br><br>
+            </div>
+            <div class="description" style="padding: 3rem 1.5rem; margin: top 100%;">
             </div>
             <div class="description" style="padding: 3rem 1.5rem; margin: top 100%;">
                 <h3>Objectifs And Content</h3>
