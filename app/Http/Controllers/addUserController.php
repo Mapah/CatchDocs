@@ -14,9 +14,20 @@ use Symfony\Contracts\Service\Attribute\Required;
 
 class adduserController extends Controller
 {
-    function adduser (Request $request){
-       
+    function user(){
+        $user = user::table('users')->paginate(15);
+        return view('user', ['users' => $user]);
+    }
+    function addUser(){
+        return view('addUser');
 
+    }
+    function saveuser (Request $request){
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'password'=>'required',
+        ]);
         $req = new user;
         $req->name = $request->name;
         $req->email = $request->email;
@@ -126,4 +137,81 @@ class adduserController extends Controller
         $req->save();
         return redirect()->back()->with('success','Document added!');
     }
+    function modifyDocument($id){
+        $data =  Documents::find($id);
+        return view('modifyDocument',compact('data'));   
+     }
+     function updateDocument(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'description'=>'required',
+            'path'=>'required',
+            'title'=>'required',
+            'tags'=>'required',
+            'annotations'=>'required',
+            'offices_id'=>'required',
+        ]);
+        $req =  Documents::find($request->id);
+        $req->name = $request->name;
+        $req->description = $request->description;
+        $req->path = $request->path;
+        $req->title = $request->title;
+        $req->tags = $request->tags;
+        $req->annotations = $request->annotations;
+        $req->offices_id = $request->offices_id;
+        $req->Documentssave();
+        return redirect()->back()->with('success','Document updated!');
+
+    }
+    function deleteDocument($id){
+        $data =  Documents::find($id);
+        $data->delete();
+        return redirect('')->back()->with('flash_message','Document deleted!');
+    }
+
+   
+
+    function office(){
+        $data=Office::all();
+        return view('office',compact('data'));
+    }
+    function addOffice(){
+        return view('addOffice');
+    }
+    function saveOffice(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'admin_id'=>'required',
+            'description'=>'required',
+        ]);
+        $req = new Documents;
+        $req->name = $request->name;
+        $req->admin_id = $request->admin_id;
+        $req->description = $request->description;
+        $req->save();
+        return redirect()->back()->with('success','Document added!');
+    }
+    
+    function modifyOffice ($id) {
+        $data =  office::find($id);
+        return view('modifyOffice',compact('data'));
+    }
+    function updateOffice(Request $request) {
+        $request->validate([
+            'name'=>'required',
+            'admin_id'=>'required',
+            'description'=>'required',
+        ]);
+        $data =  office::find($request->id);      
+        $data->name = $request->name;
+        $data->description = $request->description;
+        $data->save();
+        return redirect()->back()->with('flash_message','Office updated!');
+    }
+    function deleteOffice($id){
+        $data =  office::find($id);
+        $data->delete();
+        return redirect()->back()->with('flash_message','Document deleted!');
+    }
+
 }

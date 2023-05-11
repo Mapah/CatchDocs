@@ -50,8 +50,6 @@ Route::get('/user',[userController::class,'index']);
 Route::get('/user',[userController::class,'user'] );
 Route::get('/addUser',[addUserController::class,'addUser']);
 Route::post('/ajout',[App\Http\Controllers\addUserController::class, 'saveuser'])->name('ajout');
-Route::get('/user',[userController::class,'index']);
-Route::get('/user',[userController::class,'user'] );
 Route::get('/addUser',[addUserController::class,'addUser']);
 Route::post('/ajout',[App\Http\Controllers\addUserController::class, 'saveuser'])->name('ajout');
 Route::get('modifyUser/{id}',  [App\Http\Controllers\addUserController::class, 'modifyUser'])->name('modifyUser');
