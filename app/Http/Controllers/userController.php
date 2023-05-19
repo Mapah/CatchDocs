@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\user;
+use App\Models\Office;
 use Illuminate\Http\Request;
 
 class userController extends Controller
@@ -12,15 +13,16 @@ class userController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $user = user::all();
-        return view('user')->with('user',$user);
-    }
+    // public function index()
+    // {
+    //     $user = user::all();
+    //     return view('user')->with('user',$user);
+    // }
     public function user()
     {
+        $data1 = Office::get();
         $user= user::all();
-        return view('user',compact('user'));
+        return view('user',compact('user','data1'));
     }
   
     /**

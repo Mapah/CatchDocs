@@ -5,9 +5,9 @@
 
 <div class="container"><br><br><br>
         <!-- SEARCH FORM -->
-    <form action="{{url('search')}}" method="get" role="search" class="form-inline ml-3">
+    <form action="{{url('searchAdministration')}}" method="get" role="search" class="form-inline ml-3">
         <div class="input-group input-group-sm">
-          <input class="form-control form-control-navbar" type="search" id="search" placeholder="Search" aria-label="Search">
+          <input class="form-control form-control-navbar" name="searchAdmin" type="search" id="search" placeholder="Search" aria-label="Search">
           <div class="input-group-append">
             <button class="btn btn-navbar" type="submit">
               <i class="fas fa-search"></i>

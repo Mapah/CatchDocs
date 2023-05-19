@@ -10,14 +10,15 @@ use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use PhpParser\Node\Stmt\Use_;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Contracts\Service\Attribute\Required;
 
 class adduserController extends Controller
 {
-    function user(){
-        $user = user::table('users')->paginate(15);
-        return view('user', ['users' => $user]);
-    }
+    // function user(){
+    //     $user = user::table('users')->paginate(15);
+    //     return view('user', ['users' => $user]);
+    // }
     function addUser(){
         return view('addUser');
 
@@ -33,12 +34,12 @@ class adduserController extends Controller
         $req->email = $request->email;
         $req->password= Hash::make($request->password);
         $req->save();
-        return redirect()->back()->with('flash_message','user added!');
+        return redirect('user');
     }
     function delete($id){
         $user =  User::find($id);
         $user->delete();
-        return redirect('http://127.0.0.1:8000/user')->back()->with('flash_message','user deleted!');
+        return redirect('user');
     }
     function modifyUser ($id) {
         $user =  User::find($id);
@@ -55,11 +56,7 @@ class adduserController extends Controller
         $user->email = $request->email;
         $user->password= Hash::make($request->password);
         $user->save();
-        // User::where('id','=',$id)->update([
-        //     'name'=>$name,
-        //     'name'=>$name,           
-        // ]);
-        return redirect('http://127.0.0.1:8000/user')->back()->with('flash_message','user update!');
+        return redirect('user');
         
     }
 
@@ -82,27 +79,24 @@ class adduserController extends Controller
         $req->name = $request->name;
         $req->description = $request->description;
         $req->save();
-        return redirect()->back()->with('flash_message','Administration added!');
+        return redirect('administration')->back();
     }
     function modifyAdministration ($id) {
         $data =  Administrator::find($id);
         return view('modifyAdministration',compact('data'));
     }
     function updateAdministration(Request $request) {
-        // $request->validate([
-        //     'name'=>'required',
-        //     'description'=>'required',
-        // ]);
+
         $req =  Administrator::find($request->id);
         $req->name = $request->name;
         $req->description = $request->description;
         $req->save();
-        return redirect()->back()->with('flash_message','administration updated!');
+        return redirect('administration');
     }
     function deleteAdministration($id){
         $data =  Administrator::find($id);
         $data->delete();
-        return redirect('')->back()->with('flash_message','Adminstration deleted!');
+        return redirect('administration');
     }
 
 
@@ -110,8 +104,8 @@ class adduserController extends Controller
 
     function documents(){
         $data1 = Office::get();
-        $data=Documents::get();
-        return view('document',compact('data','data1'));
+        $document=Documents::get();
+        return view('document',compact('document','data1'));
     }
     function addDocument(){
         return view('addDocment');
@@ -135,11 +129,11 @@ class adduserController extends Controller
         $req->annotations = $request->annotations;
         $req->offices_id = $request->offices_id;
         $req->save();
-        return redirect()->back()->with('success','Document added!');
+        return redirect('documents');
     }
     function modifyDocument($id){
-        $data =  Documents::find($id);
-        return view('modifyDocument',compact('data'));   
+        $document =  Documents::find($id);
+        return view('modifyDocument',compact('document'));   
      }
      function updateDocument(Request $request){
         $request->validate([
@@ -160,13 +154,13 @@ class adduserController extends Controller
         $req->annotations = $request->annotations;
         $req->offices_id = $request->offices_id;
         $req->Documentssave();
-        return redirect()->back()->with('success','Document updated!');
+        return redirect('documents');
 
     }
     function deleteDocument($id){
-        $data =  Documents::find($id);
-        $data->delete();
-        return redirect('')->back()->with('flash_message','Document deleted!');
+        $document =  Documents::find($id);
+        $document->delete();
+        return redirect('documents')->back();
     }
 
    
@@ -184,12 +178,12 @@ class adduserController extends Controller
             'admin_id'=>'required',
             'description'=>'required',
         ]);
-        $req = new Documents;
+        $req = new Office;
         $req->name = $request->name;
         $req->admin_id = $request->admin_id;
         $req->description = $request->description;
         $req->save();
-        return redirect()->back()->with('success','Document added!');
+        return redirect('office');
     }
     
     function modifyOffice ($id) {
@@ -206,12 +200,80 @@ class adduserController extends Controller
         $data->name = $request->name;
         $data->description = $request->description;
         $data->save();
-        return redirect()->back()->with('flash_message','Office updated!');
+        return redirect('office');
     }
     function deleteOffice($id){
         $data =  office::find($id);
         $data->delete();
-        return redirect()->back()->with('flash_message','Document deleted!');
+        return redirect('office');
     }
 
+
+
+    function searching(Request $request){
+
+        if($request->get('query')){
+            $users =  User::select('id','name','email','password')->where('name','like','%'.$request->get('query').'%')
+                                                                  ->orWhere('email','like','%'.$request->get('query').'%')
+                                                                  ->get();
+           
+            return view('search',compact('users'));
+        }else{
+            return redirect('user');
+        }
+        // $search_text = $_GET['query'];
+        // $users = User::where('name','like','%'.$search_text.'%')->with('category')->get();
+        // return view('search',compact('users'));
+    }
+
+    function searchingOffice(Request $request){
+        if($request->get('searchOffice')){
+            $data =  Office::select('id','name','admin_id','description')->where('name','like','%'.$request->get('searchOffice').'%')
+                                                      ->orWhere('admin_id','like','%'.$request->get('searchOffice').'%')
+                                                      ->orWhere('description','like','%'.$request->get('searchOffice').'%')                
+                                                      ->get();
+                            
+            return view('searchOffice',compact('data'));
+        }else{
+            return redirect('office');
+        }
+         
+    }
+
+
+    function searchingAdmin(Request $request){
+        if($request->get('searchAdmin')){
+            $data =  Administrator::select('id','name','description')->where('name','like','%'.$request->get('searchAdmin').'%')
+                                                      ->orWhere('description','like','%'.$request->get('searchAdmin').'%')                
+                                                      ->get();
+                            
+            return view('searchAdministration',compact('data'));
+        }else{
+            return redirect('administration');
+        }
+         
+    }
+
+
+    function searchingDocs(Request $request){
+        if($request->get('searchDocoment')){
+            $document =  Documents::select('id','name','description','path','title','tags','annotations','offices_id')->where('name','like','%'.$request->get('searchDocoment').'%')
+                                                      ->orWhere('description','like','%'.$request->get('searchDocoment').'%')
+                                                      ->orWhere('path','like','%'.$request->get('searchDocoment').'%')
+                                                      ->orWhere('title','like','%'.$request->get('searchDocoment').'%') 
+                                                      ->orWhere('source','like','%'.$request->get('searchDocoment').'%')                  
+                                                      ->orWhere('text','like','%'.$request->get('searchDocoment').'%')  
+                                                      ->orWhere('tags','like','%'.$request->get('searchDocoment').'%')   
+                                                      ->orWhere('annotations','like','%'.$request->get('searchDocoment').'%')           
+                                                      ->orWhere('offices_id','like','%'.$request->get('searchDocoment').'%')           
+                                                      ->get();
+                            
+            return view('searchDocument',compact('document'));
+        }else{
+            return redirect('document');
+        }
+         
+    }
 }
+
+

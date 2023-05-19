@@ -31,6 +31,7 @@
                 position: absolute;
                 z-index: 1;
                 margin-top: 63%;
+                
              }
             .wellcome{
                 position: absolute;

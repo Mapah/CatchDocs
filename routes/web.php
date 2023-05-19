@@ -46,17 +46,18 @@ Route::get('homepage', function () {
 Auth::routes();
 
 Route::get('/home',  [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
 Route::get('/user',[userController::class,'index']);
-Route::get('/user',[userController::class,'user'] );
+Route::get('/user',[userController::class,'user'] )->name('user');
 Route::get('/addUser',[addUserController::class,'addUser']);
 Route::post('/ajout',[App\Http\Controllers\addUserController::class, 'saveuser'])->name('ajout');
-Route::get('/addUser',[addUserController::class,'addUser']);
-Route::post('/ajout',[App\Http\Controllers\addUserController::class, 'saveuser'])->name('ajout');
+
 Route::get('modifyUser/{id}',  [App\Http\Controllers\addUserController::class, 'modifyUser'])->name('modifyUser');
 Route::post('update',[App\Http\Controllers\addUserController::class, 'modify'])->name('modify');
 Route::get('delete/{id}',[App\Http\Controllers\addUserController::class, 'delete'])->name('delete');
 
-Route::get('/administration',[addUserController::class,'administration']);
+Route::get('/administration',[addUserController::class,'administration'])->name('administration');
 Route::get('/addAdministration',[adduserController::class,'addAdministration']);
 Route::get('/saveAdministration',[adduserController::class,'saveAdministration']);
 Route::get('modifyAdministration/{id}',  [App\Http\Controllers\addUserController::class, 'modifyAdministration'])->name('modifyAdministration');
@@ -73,7 +74,7 @@ Route::post('updateAdministration',[App\Http\Controllers\addUserController::clas
 Route::get('deleteAdministration/{id}',[App\Http\Controllers\addUserController::class, 'deleteAdministration'])->name('deleteAdministration');
 
 
-Route::get('/documents',[adduserController::class,'documents']);
+Route::get('/documents',[adduserController::class,'documents'])->name('documents');
 Route::get('/addDocument',[adduserController::class,'addDocument']);
 Route::POST('/save_addDocument',[adduserController::class,'save_addDocument']);
 Route::get('modifyDocument',[App\Http\Controllers\addUserController::class, 'modifyDocument'])->name('modifyDocument');
@@ -81,7 +82,7 @@ Route::post('updateDocument',[App\Http\Controllers\addUserController::class, 'up
 Route::get('deleteDocument/{id}',[App\Http\Controllers\addUserController::class, 'deleteDocument'])->name('deleteDocument');
 
 
-Route::get('/office',[adduserController::class,'office']);
+Route::get('/office',[adduserController::class,'office'])->name('office');
 Route::get ('/addOffice',[adduserController::class,'addOffice']);
 Route::POST('/saveOffice',[adduserController::class,'saveOffice']);
 Route::get('/modifyOffice/{id}',[App\Http\Controllers\addUserController::class, 'modifyOffice'])->name('modifyOffice');
@@ -109,3 +110,12 @@ Route::get('deleteOffice/{id}',[App\Http\Controllers\addUserController::class, '
 Route::prefix('Acceuil')->namespace('App\Http\Controllers\AcceuilController')->group(function(){
     Route::get('/','AcceuilController@index')->name('Acceuil');
 });
+
+
+Route::get('/search',[adduserController::class,'searching']); 
+
+Route::get('/searchOffice',[adduserController::class,'searchingOffice']);
+
+Route::get('/searchAdministration',[adduserController::class,'searchingAdmin']);
+
+Route::get('/searchDocument',[adduserController::class,'searchingDocs']);

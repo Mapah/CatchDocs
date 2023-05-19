@@ -5,9 +5,9 @@
 
 <div class="container"><br><br><br>
     <!-- SEARCH FORM -->
-    <form action="{{url('search')}}" method="get" role="search" class="form-inline ml-3">
+    <form action="{{ url('/search')}}" method="get" role="search" class="form-inline ml-3" >
         <div class="input-group input-group-sm">
-            <input class="form-control form-control-navbar" type="search" id="search" placeholder="Search" aria-label="Search">
+            <input class="form-control form-control-navbar" name="query" type="search" id="search" placeholder="Search" aria-label="Search">
             <div class="input-group-append">
                 <button class="btn btn-navbar" type="submit">
                     <i class="fas fa-search"></i>
@@ -25,6 +25,12 @@
                 </div>
                 @enderror
                 <div class="card-header"> Table Of Users</div>
+                <select class="form-select" aria-label="Office" id="Office" style="width:14%">
+                    <option selected disabled>Office</option>
+                    @foreach($data1 as $office)
+                        <option value="{{ $office->name}}">{{ $office->name}}</option>
+                    @endforeach
+                </select>
                 <div class="card-body">
                     <a href="http://127.0.0.1:8000/addUser" class="btn btn-success btn-sm">Add New</a><br><br>
                     <div class="table-responsive">
