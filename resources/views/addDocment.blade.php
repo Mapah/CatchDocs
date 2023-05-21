@@ -34,7 +34,7 @@
                 @enderror
                 <div class="md-3"></div>
                 <label for="">path</label><br>
-                <input type="text" name="path" id="path" class="form-control" value="{{old('path')}}"><br>
+                <input type="file" name="path" id="path"  value="{{old('path')}}"><br><br>
                 @error('path')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}  
