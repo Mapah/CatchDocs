@@ -75,7 +75,8 @@ Route::get('deleteAdministration/{id}',[App\Http\Controllers\addUserController::
 
 
 Route::get('/documents',[adduserController::class,'documents'])->name('documents');
-Route::get('/addDocument',[adduserController::class,'addDocument']);
+Route::get('/addDocument',[adduserController::class,'addDocument'])->name('selectoffice');
+Route::get('/selectoffice',[adduserController::class,'getDocumentByIdOffice']);
 Route::POST('/save_addDocument',[adduserController::class,'save_addDocument']);
 Route::get('modifyDocument',[App\Http\Controllers\addUserController::class, 'modifyDocument'])->name('modifyDocument');
 Route::post('updateDocument',[App\Http\Controllers\addUserController::class, 'updateDocument'])->name('updateDocument');

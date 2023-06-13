@@ -107,9 +107,11 @@ class adduserController extends Controller
         $document=Documents::get();
         return view('document',compact('document','data1'));
     }
+
     function addDocument(){
         return view('addDocment');
     }
+
     function save_addDocument(Request $request){
         $request->validate([
             'name'=>'required',
@@ -120,14 +122,21 @@ class adduserController extends Controller
             'annotations'=>'required',
             'offices_id'=>'required',
         ]);
+
+        $url = time().'-'.$request->name . '.'.$request->path->extension();    
+        $request->path->move(public_path('images'), $url);
+
         $req = new Documents;
         $req->name = $request->name;
         $req->description = $request->description;
-        $req->path = $request->path;
+        $req->path = $url; //$request->path;
         $req->title = $request->title;
         $req->tags = $request->tags;
+        $req->source = $request->tags;
+        $req->text = $request->tags;
         $req->annotations = $request->annotations;
-        $req->offices_id = $request->offices_id;
+        // $req->offices_id = $request->offices_id;
+        $req->offices_id = 7;
         $req->save();
         return redirect('documents');
     }
@@ -135,6 +144,7 @@ class adduserController extends Controller
         $document =  Documents::find($id);
         return view('modifyDocument',compact('document'));   
      }
+
      function updateDocument(Request $request){
         $request->validate([
             'name'=>'required',
@@ -155,12 +165,27 @@ class adduserController extends Controller
         $req->offices_id = $request->offices_id;
         $req->Documentssave();
         return redirect('documents');
-
+    
     }
-    function deleteDocument($id){
+    function getDocumentByIdOffice(Request $request){
+        $id = $request->get('office');
+        $document = Documents::where('offices_id', $id)->get();      
+        $data1 = Office::get();
+        return view('document',compact('document','data1'));
+    }
+        function deleteDocument($id){
         $document =  Documents::find($id);
         $document->delete();
-        return redirect('documents')->back();
+        return redirect('documents')->back()
+        ->with('error', 'An error occurred while trying to display the update form.');
+                // return Redirect::back()->with('message', [
+                //     'type' => 'error',
+                //     'text' => 'Invalid client app.'
+                // ]);
+            //    return redirect('/welcome')->with('message', [
+            //         'type' => 'success',
+            //         'text' => 'Vous avez été déconnecté avec succès !'
+            //     ]);
     }
 
    
@@ -256,6 +281,7 @@ class adduserController extends Controller
 
 
     function searchingDocs(Request $request){
+        // dd($request->get('searchDocoment')); 
         if($request->get('searchDocoment')){
             $document =  Documents::select('id','name','description','path','title','tags','annotations','offices_id')->where('name','like','%'.$request->get('searchDocoment').'%')
                                                       ->orWhere('description','like','%'.$request->get('searchDocoment').'%')
@@ -267,8 +293,10 @@ class adduserController extends Controller
                                                       ->orWhere('annotations','like','%'.$request->get('searchDocoment').'%')           
                                                       ->orWhere('offices_id','like','%'.$request->get('searchDocoment').'%')           
                                                       ->get();
-                            
-            return view('searchDocument',compact('document'));
+                             
+        $data1 = Office::get();
+        return view('document',compact('document','data1'));
+            // return view('searchDocument',compact('document'));
         }else{
             return redirect('document');
         }

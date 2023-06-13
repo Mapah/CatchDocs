@@ -11,6 +11,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    // logMessage(id, Documents::class, "le motif")
     function logMessage($loggableId, $loggableType, $message) {
         try {
             Log::create([

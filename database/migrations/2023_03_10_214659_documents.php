@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->string('path');
+            $table->string('path',300);
             $table->string('title');
             $table->string('source');
             $table->string('text');
