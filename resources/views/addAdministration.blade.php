@@ -30,6 +30,13 @@
                     </div>
                 @enderror
 
+                <label for="">user_id</label><br>
+                <input type="text" name="user_id" id="user_id" class="form-control" value="{{old('user_id')}}"><br>
+                @error('user_id')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}  
+                    </div>
+                @enderror
 
                 <input type="submit" value="save" class="btn btn-success"><br>
  

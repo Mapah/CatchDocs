@@ -78,8 +78,10 @@ class adduserController extends Controller
         $req = new Administrator;
         $req->name = $request->name;
         $req->description = $request->description;
+        $req->user_id = $request->user_id;
+
         $req->save();
-        return redirect('administration')->back();
+        return redirect('administration');
     }
     function modifyAdministration ($id) {
         $data =  Administrator::find($id);
@@ -90,6 +92,7 @@ class adduserController extends Controller
         $req =  Administrator::find($request->id);
         $req->name = $request->name;
         $req->description = $request->description;
+        // $req->user_id = $request->user_id;
         $req->save();
         return redirect('administration');
     }

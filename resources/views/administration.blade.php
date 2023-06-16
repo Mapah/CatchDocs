@@ -34,6 +34,7 @@
                                         <th>Id</th>
                                         <th>Name</th>
                                         <th>description</th>
+                                        <th>user_id</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -43,6 +44,7 @@
                                         <td>{{$item->id}} <br></td>
                                             <td>{{$item->name }} <br></td>
                                             <td>{{$item->description}} <br></td>
+                                            <td>{{$item->user_id}} <br></td>
                                             <td><a href="{{ url('modifyAdministration',$item->id)}}" class="btn btn-primary m-2">Edit</a><a href="{{url('deleteAdministration',$item->id)}}" class="btn btn-danger">Delete</a></td>        
                                         </tr>
                                     @endforeach
