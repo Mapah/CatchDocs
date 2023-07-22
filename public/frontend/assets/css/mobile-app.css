@@ -1,0 +1,709 @@
+
+
+.mobile-app {
+  overflow: hidden;
+  font-size: 16px;
+  position: relative;
+  z-index: 6
+}
+
+.mobile-app * {
+  box-sizing: border-box
+}
+
+.mobile-app p {
+  margin: 0
+}
+
+.mobile-app *:focus {
+  outline: none
+}
+
+.mobile-app__column {
+  position: relative;
+  z-index: 0
+}
+
+.mobile-app__column--content {
+  -webkit-flex: 0 0 43.75em;
+  -ms-flex: 0 0 43.75em;
+  flex: 0 0 43.75em;
+  padding: 8.75em 0em 5em 0em
+}
+
+.mobile-app__column--content::before {
+  content: '';
+  position: absolute;
+  top: -2.5em;
+  z-index: -1;
+  width: 156.25em;
+  height: 43.75em;
+  border-radius: 8.75em;
+  background: #f5f7fa;
+  -webkit-transform: skewY(-4deg);
+  transform: skewY(-4deg);
+  left: -9.375em
+}
+
+@media screen and (max-width: 1367px) {
+  .mobile-app__column--content {
+    padding: 4.375em 0em 5em 0em
+  }
+}
+
+.mobile-app__column--illustration {
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  background: url("/default/img/mobile-apps/illustration.png") 50% no-repeat;
+  background-size: contain
+}
+
+.mobile-app__title {
+  margin-bottom: .52083em;
+  font-size: 3em;
+  font-weight: 700;
+  color: #215685
+}
+
+.mobile-app__text {
+  margin-bottom: 3.05556em;
+  font-size: 1.125em;
+  color: #779ab8
+}
+
+.mobile-app__features,
+.mobile-app__features.mobile-app-features {
+  margin-bottom: 3.75em
+}
+
+.mobile-app__picture,
+.mobile-app__img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: 0
+}
+
+.mobile-app__img {
+  object-fit: cover
+}
+
+.mobile-app__buttons {
+  margin-bottom: 7.5em
+}
+
+.mobile-app-info {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-right: 10.625em;
+  padding-left: 17.5em;
+  position: relative;
+  z-index: 1
+}
+
+@media screen and (max-width: 1667px) {
+  .mobile-app-info {
+    padding-right: 0;
+    padding-left: 10.625em
+  }
+}
+
+.mobile-app-button {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: .875em 2.0625em;
+  border: 0;
+  border-radius: 2px;
+  background: #7dab2f;
+  font-size: inherit
+}
+
+.mobile-app-button:hover {
+  background: #91c736
+}
+
+.mobile-app-button:focus {
+  box-shadow: 0 0 0 1px #215685
+}
+
+.mobile-app-button__container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center
+}
+
+.mobile-app-button__container:focus {
+  outline: none
+}
+
+.mobile-app-button__svg {
+  width: 1.75em;
+  height: 1.75em;
+  fill: #fff;
+  margin-right: 1.125em
+}
+
+.mobile-app-button__label {
+  font-size: .875em;
+  white-space: nowrap;
+  color: #fff
+}
+
+.mobile-app-buttons {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start
+}
+
+.mobile-app-buttons__button {
+  margin-right: 25px
+}
+
+.mobile-app-download__title {
+  margin-bottom: 1.11111em;
+  font-size: 1.125em;
+  color: #57b455
+}
+
+.mobile-app-download__form {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex
+}
+
+.mobile-app-download__phone {
+  width: 18em
+}
+
+.mobile-app-download .c-registration {
+  padding: 0
+}
+
+.mobile-app-download .c-registration__field {
+  margin: 0;
+  height: auto;
+  width: 18em;
+  padding-right: .625em;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto
+}
+
+.mobile-app-download .c-registration__input::-webkit-input-placeholder {
+  color: #757575
+}
+
+.mobile-app-download .c-registration__input::-moz-placeholder {
+  color: #757575
+}
+
+.mobile-app-download .c-registration__input:-ms-input-placeholder {
+  color: #757575
+}
+
+.mobile-app-download .c-registration__input::placeholder {
+  color: #757575
+}
+
+.mobile-app-download-phone {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px #baccdb solid;
+  color: #215685;
+  border-radius: 3px 0 0 3px;
+  padding-left: .75em
+}
+
+.mobile-app-download-phone__flag {
+  min-width: 1em;
+  top: auto;
+  margin-right: .625em
+}
+
+.mobile-app-download-phone__code {
+  font-size: .875em
+}
+
+.mobile-app-download-phone__input {
+  width: 100%;
+  font-size: .875em;
+  border: 0;
+  color: #215685
+}
+
+.mobile-app-download-phone__input:focus {
+  outline: none
+}
+
+.mobile-app-download-btn {
+  cursor: pointer;
+  padding: .5em 1.5em;
+  height: 2.5em;
+  border: 0;
+  text-transform: uppercase;
+  border-radius: 0 3px 3px 0;
+  background: #57b455;
+  color: #fff
+}
+
+.mobile-app-download-btn:hover {
+  background: #3385ce
+}
+
+.mobile-app-download-btn:disabled {
+  background: #7d9fbd
+}
+
+.mobile-app-download-btn:focus {
+  outline: none
+}
+
+.mobile-app-features {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 0
+}
+
+.mobile-app-features__item {
+  list-style-type: none
+}
+
+.mobile-app-features__content {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 11.25em;
+  margin-right: 1.875em
+}
+
+.mobile-app-features__svg {
+  width: 2.125em;
+  height: 1.8125em;
+  margin-bottom: 1.25em;
+  fill: #57b455
+}
+
+.mobile-app-features__text {
+  font-size: 1.125em;
+  color: #779ab8
+}
+
+.mobile-app-heading {
+  margin-bottom: 3.75em;
+  font-size: inherit
+}
+
+.mobile-app-heading__container {
+  display: block;
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: 700;
+  line-height: 1.1em;
+  color: #009fe3
+}
+
+.mobile-app-install {
+  padding-top: .9375em
+}
+
+.mobile-app-install__notice {
+  max-width: 49.5625em;
+  margin: 0 auto 2.5em
+}
+
+.mobile-app-container {
+  position: relative;
+  padding: 0em 1.25em;
+  max-width: 88.75em;
+  margin: 0 auto
+}
+
+.mobile-app-notice {
+  position: relative;
+  padding: 2.5em 1.875em 2.5em 7.1875em;
+  border: 1px dashed #b8c6d3;
+  border-radius: 3px
+}
+
+.mobile-app-notice__icon {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 2.375em
+}
+
+.mobile-app-notice__text {
+  font-size: 1.125em;
+  color: #779ab8
+}
+
+.mobile-app-notice-icon {
+  width: 3.6875em;
+  height: 3.5em
+}
+
+.mobile-app-steps {
+  position: relative
+}
+
+.mobile-app-steps__list {
+  width: 46.875em;
+  margin: 0 auto;
+  overflow: hidden;
+  counter-reset: myCounter
+}
+
+.mobile-app-steps__item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 12.5em
+}
+
+.mobile-app-steps__slider-button {
+  position: absolute !important;
+  top: 8.3125em;
+  cursor: pointer;
+  z-index: 10
+}
+
+.mobile-app-steps__slider-button--prev {
+  right: 43%;
+  -webkit-transform: translateX(-25.625em);
+  transform: translateX(-25.625em)
+}
+
+.mobile-app-steps__slider-button--next {
+  left: 43%;
+  -webkit-transform: translateX(25.625em);
+  transform: translateX(25.625em)
+}
+
+.mobile-app-steps__slider-button .ico__svg {
+  width: .5625em;
+  height: .75em;
+  fill: #57b455
+}
+
+.mobile-app-steps-slider-button {
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 2.0625em;
+  max-width: 100%;
+  height: 4.875em;
+  padding: 0;
+  border: none;
+  border-radius: 3px;
+  text-align: center
+}
+
+.mobile-app-steps-slider-button.swiper-button-disabled {
+  opacity: 0.6;
+  pointer-events: none
+}
+
+.mobile-app-steps-slider-button--theme-light {
+  background-color: #f4f9fd
+}
+
+.mobile-app-slider-pagination {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 2.1875em 0em;
+  margin: 0 auto
+}
+
+.mobile-app-slider-pagination .swiper-pagination-bullet {
+  border-radius: 50%;
+  margin-right: .625em;
+  background-color: #91c538
+}
+
+.mobile-app-screen-text-block {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 1em 1.25em;
+  width: 100%;
+  height: 100%
+}
+
+.mobile-app-screen {
+  position: relative;
+  min-height: 23.125em
+}
+
+.mobile-app-screen__img {
+  margin-bottom: 1.125em
+}
+
+.mobile-app-screen--android-1 .mobile-app-screen-text-block .mobile-app-screen__title {
+  margin: 10.625em 0em .625em
+}
+
+.mobile-app-screen--android-2 .mobile-app-screen-text-block .mobile-app-screen__back {
+  margin-bottom: 7.5em
+}
+
+.mobile-app-screen--android-3 .mobile-app-screen-text-block .mobile-app-screen__back {
+  margin-bottom: 1.8125em
+}
+
+.mobile-app-screen--ios-1 .mobile-app-screen-text-block .mobile-app-screen__text:first-child,
+.mobile-app-screen--ios-4 .mobile-app-screen-text-block .mobile-app-screen__text:first-child {
+  margin-bottom: 7.0625em
+}
+
+.mobile-app-screen--ios-2 .mobile-app-screen-text-block .mobile-app-screen__back {
+  margin-bottom: 1.125em
+}
+
+.mobile-app-screen--ios-3 .mobile-app-screen-text-block .mobile-app-screen__back {
+  margin-bottom: 1.125em
+}
+
+.mobile-app-screen--ios-3 .mobile-app-screen-text-block .mobile-app-screen__text:nth-child(2) {
+  margin-top: 1.875em
+}
+
+.mobile-app-screen--ios-3 .mobile-app-screen-text-block .mobile-app-screen__text:nth-child(2) .mobile-app-screen-text__container {
+  font-size: .875em
+}
+
+.mobile-app-screen--ios-3 .mobile-app-screen-text-block .mobile-app-screen__text:nth-child(2),
+.mobile-app-screen--ios-3 .mobile-app-screen-text-block .mobile-app-screen__text:nth-child(3) {
+  padding-left: 2.5em
+}
+
+.mobile-app-screen--ios-5 .mobile-app-screen-text-block .mobile-app-screen__text:first-child {
+  margin-bottom: 3.125em
+}
+
+.mobile-app-screen--ios-6 .mobile-app-screen-text-block .mobile-app-screen__text:first-child {
+  margin-bottom: 8.875em
+}
+
+.mobile-app-screen--ios-7 .mobile-app-screen-text-block .mobile-app-screen__back {
+  margin-bottom: 5.9375em
+}
+
+.mobile-app-screen--ios-7 .mobile-app-screen-text-block .mobile-app-screen__text--narrow {
+  max-width: 7.1875em;
+  margin: 0 auto 4.5em
+}
+
+.mobile-app-screen--ios-7 .mobile-app-screen-text-block .mobile-app-screen__buttons {
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 6.875em;
+  margin: 0 auto
+}
+
+.mobile-app-screen--ios-7 .mobile-app-screen-text-block .mobile-app-screen__buttons>*:first-child {
+  margin: 0
+}
+
+.mobile-app-screen--ios-8 .mobile-app-screen-text-block .mobile-app-screen__row--header {
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: .625em;
+  margin-bottom: 6.875em
+}
+
+.mobile-app-screen--ios-8 .mobile-app-screen-text-block .mobile-app-screen__row:not(.mobile-app-screen__row--header) {
+  margin-bottom: .9375em
+}
+
+.mobile-app-screen--ios-8 .mobile-app-screen-text-block .mobile-app-screen__row:not(.mobile-app-screen__row--header)>* {
+  width: 50%
+}
+
+.mobile-app-screen--ios-8 .mobile-app-screen-text-block .mobile-app-screen-table-title {
+  min-height: 1.8125em;
+  margin-bottom: 1.1875em
+}
+
+.mobile-app-screen--ios-9 .mobile-app-screen-text-block .mobile-app-screen__text:nth-child(2) {
+  margin: .9375em 0em 0em 3.25em
+}
+
+.mobile-app-screen--ios-10 .mobile-app-screen-text-block .mobile-app-screen__text:first-child {
+  padding: 1.875em 0em 5.9375em
+}
+
+.mobile-app-screen--ios-11 .mobile-app-screen-text-block .mobile-app-screen__back {
+  margin-bottom: 1.25em
+}
+
+.mobile-app-screen--ios-11 .mobile-app-screen-text-block .mobile-app-screen__text:nth-child(2) {
+  margin-bottom: 3.875em
+}
+
+.mobile-app-screen--ios-11 .mobile-app-screen-text-block .mobile-app-screen__text:nth-child(3) {
+  margin-bottom: 2.4375em
+}
+
+.mobile-app-screen--ios-12 .mobile-app-screen-text-block .mobile-app-screen__back {
+  margin-bottom: 1.25em
+}
+
+.mobile-app-screen--ios-12 .mobile-app-screen-text-block .mobile-app-screen__text:nth-child(2) {
+  margin-bottom: 4.375em
+}
+
+.mobile-app-screen--ios-12 .mobile-app-screen-text-block .mobile-app-screen__text:nth-child(3) {
+  max-width: 110px;
+  margin: 0 auto 1em
+}
+
+.mobile-app-screen--ios-12 .mobile-app-screen-text-block .mobile-app-screen__text:nth-child(4) {
+  margin-bottom: .6875em
+}
+
+.mobile-app-screen--ios-12 .mobile-app-screen-text-block .mobile-app-screen__buttons {
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 110px;
+  margin: 1.4375em auto 0
+}
+
+.mobile-app-screen--ios-12 .mobile-app-screen-text-block .mobile-app-screen__buttons>*:first-child {
+  margin: 0
+}
+
+.mobile-app-screen-text {
+  color: #779ab8
+}
+
+.mobile-app-screen-text__container {
+  font-size: .6875em;
+  line-height: 1.27273em
+}
+
+.mobile-app-screen-text--opacity {
+  opacity: 0.6
+}
+
+.mobile-app-screen-text--align-center {
+  text-align: center
+}
+
+.mobile-app-screen-text--theme-primary .mobile-app-screen-text__container {
+  color: #57b455
+}
+
+.mobile-app-screen-text-block .mobile-app-screen__row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
+
+.mobile-app-screen-text-block .mobile-app-screen__back {
+  display: inline-block;
+  padding-left: .75em
+}
+
+.mobile-app-screen-text-block .mobile-app-screen__buttons {
+  margin: auto 0em 2.1875em;
+  padding: 0em .75em;
+  min-width: 9.0625em
+}
+
+.mobile-app-screen-text-block .mobile-app-screen__status {
+  padding: .125em 0em 0em 1.5625em
+}
+
+.mobile-app-screen-title__container {
+  display: block;
+  font-size: .8125em;
+  font-weight: 700;
+  line-height: 1.69231em;
+  color: #20951d
+}
+
+.mobile-app-steps-text-container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%
+}
+
+.mobile-app-steps-text-container__number {
+  font-size: .875em;
+  font-weight: 700;
+  color: #57b455;
+  margin-right: .35714em
+}
+
+.mobile-app-steps-text-container__text {
+  font-size: .875em;
+  color: #57b455
+}
+
+.mobile-app-steps-text-container__link {
+  font-weight: 700
+}
