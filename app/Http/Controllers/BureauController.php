@@ -35,7 +35,7 @@ class BureauController extends Controller
     public function edit($id)
     {
         $bureau = bureau::find($id);
-        return view('super_admin.bureaux.edit',['bureau'=>$bureau]);
+        return view('super_admin.bureaux.edit',['administration'=>$bureau]);
 
     }
 
