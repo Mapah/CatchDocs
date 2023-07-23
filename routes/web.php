@@ -146,7 +146,7 @@ Route::group(['middleware' => 'auth'], function(){
   Route::post('/chef_bureau_document/store', [ChefBureauDocumentController::class,'store']);
   Route::get('/chef_bureau_document/delete', [ChefBureauDocumentController::class,'delete']);
   Route::get('/chef_bureau_print_document/{id}', [ChefBureauDocumentController::class,'print']);
-
 });
+
 
 require __DIR__.'/auth.php';

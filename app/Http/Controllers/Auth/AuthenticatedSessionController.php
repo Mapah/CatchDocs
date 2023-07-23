@@ -42,11 +42,27 @@ class AuthenticatedSessionController extends Controller
 
         return redirect()->back();
 
-        // $request->authenticate();
+    }
 
-        // $request->session()->regenerate();
+    
+    public function login_api(LoginRequest $request)
+    {
+        $user = User::where('email', $request->email)->first();
 
-        // return redirect()->intended(RouteServiceProvider::HOME);
+        if ($user) {
+            if (Hash::check($request->password, $user->password)) {
+                auth()->login($user);
+
+                return response()->json([
+                    'message' => 'Login successful',
+                    'user' => $user
+                ], 200);
+            }
+        }
+
+        return response()->json([
+            'message' => 'Invalid credentials'
+        ], 401);
     }
 
     /**

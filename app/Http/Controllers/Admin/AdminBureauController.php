@@ -21,7 +21,9 @@ class AdminBureauController extends Controller
             $request->session()->now("error",session('error'));
         }
         $user=Auth::user();
-        $administration=Administration::where('user_id',$user->id)->first();
+        $administration = Administration::where('user_id',$user->id)->first();
+        $administration = $administration==null ? $user : $administration;
+        
         $bureaux=bureau::where('administration_id',$administration->id)->get();
         return view('admin.bureaux.index',[
             'bureaux'=>$bureaux,
@@ -43,6 +45,14 @@ class AdminBureauController extends Controller
         return view('admin.bureaux.edit',['bureau'=>$bureau]);
 
     }
+
+    
+    public function edit_api()
+    {
+        $bureau = Bureau::all();
+        return response()->json(['message' => "bureaux",'bureau' => $bureau]);
+    }
+    
 
     public function add_chef_bureau($id)
     {

@@ -59,12 +59,6 @@ class SPUsersController extends Controller
         }
         $user->save();
 
-        // $user->syncRoles($request->role);
-        // Log::info('password for '.$user->name,['password'=> $user->phone]);
-        // send mail to user for password
-        // Mail::to($user->email)->locale('en')->send(new PasswordSent($user->name,$user->phone));
-        //
-
         return redirect('/users')->with('status','');
 
     }

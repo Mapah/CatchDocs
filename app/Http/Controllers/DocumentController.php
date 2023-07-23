@@ -37,7 +37,7 @@ class DocumentController extends Controller
     public function edit($id)
     {
         $Document = Document::find($id);
-        return view('super_admin.Documents.edit',['Document'=>$Document]);
+        return view('super_admin.Documents.edit',['Document'=>$Document, 'administration'=>$Document]);
 
     }
 
@@ -73,30 +73,37 @@ class DocumentController extends Controller
 
     public function store_api(Request $request)
     {
-        //  dd('ghh');
         $request->validate([
             'name' => 'required',
         ]);
-
+    
         $Document = new Document();
-        $Document->name =$request->name;
+        $Document->name = $request->name;
         $Document->user_id =$request->user_id;
-        $Document->bureau_id =$request->bureau_id;
-        $Document->qr_code =$request->qr_code;
-        $Document->code =$request->code;
-        $Document->number =$request->number	;
-
+        $Document->bureau_id = $request->bureau_id;
+    
+        $Document->qr_code = randomString(10);
+    
+        $uniqueCode = false;
+        while (!$uniqueCode) {
+            $code = randomString(8);
+            // Vérifier si le code est unique dans la base données
+            if (!Document::where('code', $code)->exists()) {
+                $Document->code = $code;
+                $uniqueCode = true;
+            }
+        }
+        
         if ($request->hasFile('document')) {
-            // resize and upload
             $ext = pathinfo($_FILES['document']['name'], PATHINFO_EXTENSION);
             $name=randomString(1).'.'.$ext;
             if($request->file('document')->move(public_path('documents'),$name)){
-                // resizeImg($name,'config/logos',177,35,$ext);
                 $Document->document = $name;
             }
         }
-        $Document->save();
 
+        $Document->save();
+    
         return response()->json(['message' => 'Succès']);
     }
 

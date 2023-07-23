@@ -69,14 +69,14 @@ class AdministrationController extends Controller
     }
     public function update(Request $request)
     {
+        // dd($request->name);
         $request->validate([
             'name' => 'required',
             'description' => 'required',
         ]);
 
-        $administration = administration::find($request->id);
-        $administration->name =$request->name;
-
+        $administration = Administration::find($request->id);
+        $administration->name = $request->name;
         $administration->description = $request->description;
         $administration->save();
 
