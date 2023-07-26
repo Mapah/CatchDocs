@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\AdminBureauController;
+use App\Http\Controllers\APIDocumentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,5 @@ Route::get('/admin_bureaux', [AdminBureauController::class,'edit_api']);
 Route::post('/document/store', [DocumentController::class,'store_api']);
 
 Route::post('login', [AuthenticatedSessionController::class, 'login_api']);
+
+Route::get('/get_documents', [APIDocumentController::class,'index']);

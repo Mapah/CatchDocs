@@ -26,7 +26,9 @@
           @endphp
 
           <!-- Content -->
-          <div class="navbar-vertical-content">
+          <div class="navbar-vertical-content" style="background-color: lightcyan"><hr>
+            <div class="text center"><span class="text-dark text-center  text-xl" style="font-size: 25px">Super Admin</span></div>
+            <hr>
             <div id="navbarVerticalMenu" class="nav nav-pills nav-vertical card-navbar-nav">
               <!-- Collapse -->
               <div class="nav-item">

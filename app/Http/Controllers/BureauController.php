@@ -35,7 +35,8 @@ class BureauController extends Controller
     public function edit($id)
     {
         $bureau = bureau::find($id);
-        return view('super_admin.bureaux.edit',['administration'=>$bureau]);
+        $users = User::where('role','CHEFBUREAU')->get();
+        return view('super_admin.bureaux.edit',['bureau'=>$bureau, 'users'=>$users]);
 
     }
 
@@ -49,7 +50,6 @@ class BureauController extends Controller
 
     public function store(Request $request)
     {
-        // dd('ghh');
         $request->validate([
             'name' => 'required',
             'description' => 'required',
@@ -74,7 +74,7 @@ class BureauController extends Controller
 
         $bureau = bureau::find($request->id);
         $bureau->name =$request->name;
-
+        $bureau->user_id =$request->user_id;
         $bureau->description = $request->description;
         $bureau->save();
 

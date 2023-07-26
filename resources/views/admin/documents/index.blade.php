@@ -151,6 +151,12 @@
 
             <tbody>
             @foreach ($documents as $document)
+            @php
+            $administration=App\Models\Administration::where('user_id',Auth::user()->id)->first();
+                $bureau=App\Models\Bureau::find($document->bureau_id);
+            @endphp
+            @if ($bureau->Administration_id==$administration->id)
+
             <tr>
               <td>
               {{$document->name}}
@@ -175,7 +181,7 @@
 
               </td>
             </tr>
-
+            @endif
             @endforeach
             </tbody>
           </table>

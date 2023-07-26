@@ -21,7 +21,7 @@
     <!-- Content -->
     <div class="content container">
     <!-- Page Header -->
-      <x-backend.index_page_header title1="Documents" :title="'document'" :user="'Admin'" :size="sizeof($documents)"/>
+      <x-backend.index_page_header title1="Documents" :title="'chef_bureau_document'" :user="'Admin'" :size="sizeof($documents)"/>
       <!-- End Page Header -->
 
       <div class="card">

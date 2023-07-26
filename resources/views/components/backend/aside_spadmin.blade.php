@@ -3,7 +3,9 @@
       <div class="navbar-vertical-footer-offset">
         <!-- Logo -->
         <a class="navbar-brand" href="#" aria-label="Front">
-          <span class="navbar-brand-logo btn text-info text-xl" style="font-size: 30px">CATCHDOC</span>
+          <span class="navbar-brand-logo btn text-info text-xl" style="font-size: 30px">CATCHDOC</span><br><br>
+
+
           {{-- <img class="navbar-brand-logo" src="{{active_setting() != null?asset('config/logos/'.active_setting()->logo):''}}" onerror="src='{{asset('backend/svg/logos/logo.svg')}}'" alt="Logo" data-hs-theme-appearance="default" height="60" width="200">
           <img class="navbar-brand-logo" src="{{active_setting() != null?asset('config/logos/'.active_setting()->logo):''}}" onerror="src='{{asset('backend/svg/logos-light/logo.svg')}}'" alt="Logo" data-hs-theme-appearance="dark" height="60" width="200">
           <img class="navbar-brand-logo-mini" src="{{active_setting() != null?asset('config/logos/'.active_setting()->logo):''}}" onerror="src='{{asset('backend/svg/logos/logo-short.svg')}}'" alt="Logo" data-hs-theme-appearance="default" height="60" width="200">
@@ -26,7 +28,9 @@
         @endphp
 
         <!-- Content -->
-        <div class="navbar-vertical-content">
+        <div class="navbar-vertical-content" style="background-color: lightcyan"><hr>
+            <div class="text center"><span class="text-dark text-center  text-xl" style="font-size: 25px">Super Admin</span></div>
+            <hr>
           <div id="navbarVerticalMenu" class="nav nav-pills nav-vertical card-navbar-nav">
             <!-- Collapse -->
             <div class="nav-item">

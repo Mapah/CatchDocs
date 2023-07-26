@@ -36,7 +36,7 @@
                 <div id="addUserStepProfile" class="card card-lg active">
                   <!-- Body -->
                   <div class="card-body">
-
+                   <h3>Administrateur: {{$administration->user->name  ?? ''}} </h3>
                     <!-- Form -->
                     <div class="row mb-4">
                       <label for="firstNameLabel" class="col-sm-3 col-form-label form-label">Libelle/Titre<code>*</code></label>
@@ -70,9 +70,28 @@
                         </div>
                         <!-- End Quill -->
                       </div>
+
                     </div>
                     <!-- End Form -->
+ <!-- Form -->
+ <div class="row mb-4">
+  <label for="roleLabel" class="col-sm-5 col-form-label form-label">Changer L'administrateur ({{$administration->name}}) </label>
 
+  <div class="col-sm-7">
+    <!-- Select -->
+    <div class="tom-select-custom mb-4">
+      <select class="js-select form-select" name="user_id">
+        <option value=""></option>
+          @foreach ($users as $user)
+          <option value="{{ $user->id }}">{{ $user->name }}</option>
+          @endforeach
+
+      </select>
+    </div>
+    <!-- End Select -->
+  </div>
+</div>
+<!-- End Form -->
                   </div>
                   <!-- End Body -->
 

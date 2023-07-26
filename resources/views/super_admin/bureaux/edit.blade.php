@@ -18,7 +18,7 @@
     <!-- End Navbar Vertical -->
     <div class="container mt-4">
         <!-- page header -->
-        <x-backend.page_header :user="'Super Admin'" title="administrations" :type="'Edit'"/>
+        <x-backend.page_header :user="'Super Admin'" title="bureaus" :type="'Edit'"/>
         <!-- End page header -->
         <!-- Step Form -->
         <form class="js-step-form py-md-5" data-hs-step-form-options='{
@@ -26,7 +26,7 @@
                 "stepsSelector": "#addUserStepFormContent",
                 "endSelector": "#addUserFinishBtn",
                 "isValidate": false
-              }' enctype="multipart/form-data" method="POST" action="{{url('administration/update')}}">
+              }' enctype="multipart/form-data" method="POST" action="{{url('bureau/update')}}">
               @csrf
           <div class="row justify-content-lg-center">
             <div class="col-lg-8">
@@ -36,14 +36,14 @@
                 <div id="addUserStepProfile" class="card card-lg active">
                   <!-- Body -->
                   <div class="card-body">
-
+<h3>Chef Bureau: {{$bureau->user->name}}</h3>
                     <!-- Form -->
                     <div class="row mb-4">
                       <label for="firstNameLabel" class="col-sm-3 col-form-label form-label">Libelle/Titre<code>*</code></label>
 
                       <div class="col-sm-9">
                         <div class="input-group input-group-sm-vertical">
-                          <input type="text" class="form-control" name="name" value='{{$administration->name}}'  aria-label="Clarice" required>
+                          <input type="text" class="form-control" name="name" value='{{$bureau->name}}'  aria-label="Clarice" required>
                         </div>
                       </div>
                     </div>
@@ -65,22 +65,40 @@
                                   ]
                                   }
                               }'>
-                              {!!$administration->description!!}
+                              {!!$bureau->description!!}
                           </div>
                         </div>
                         <!-- End Quill -->
                       </div>
                     </div>
                     <!-- End Form -->
+<!-- Form -->
+<div class="row mb-4">
+    <label for="roleLabel" class="col-sm-5 col-form-label form-label">Changer Le chef bureau ({{$bureau->name ?? ''}}) </label>
 
+    <div class="col-sm-7">
+      <!-- Select -->
+      <div class="tom-select-custom mb-4">
+        <select class="js-select form-select" name="user_id">
+            <option value=""></option>
+            @foreach ($users as $user)
+            <option value="{{ $user->id }}">{{ $user->name }}</option>
+            @endforeach
+
+        </select>
+      </div>
+      <!-- End Select -->
+    </div>
+  </div>
+  <!-- End Form -->
                   </div>
                   <!-- End Body -->
 
                   <!-- Footer -->
-                  <input type="hidden" name="description" id="long-desc-hidden" value="{{$administration->description}}" >
-                  <input type="hidden" name="description_en" id="long-desc-hidden-2" value="{{$administration->description}}" >
-                  <input type="hidden" name="id" value="{{$administration->id}}" required>
-                  {{-- <input type="hidden" name="type" value="administration" required> --}}
+                  <input type="hidden" name="description" id="long-desc-hidden" value="{{$bureau->description}}" >
+                  <input type="hidden" name="description_en" id="long-desc-hidden-2" value="{{$bureau->description}}" >
+                  <input type="hidden" name="id" value="{{$bureau->id}}" required>
+                  {{-- <input type="hidden" name="type" value="bureau" required> --}}
                   <div class="card-footer d-flex justify-content-end align-items-center">
                     <button type="submit" id="submit" class="btn btn-primary">
                       Modifier <i class="bi-chevron-right"></i>

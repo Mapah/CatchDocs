@@ -23,7 +23,7 @@
         <!-- Step Form -->
         <div class="row justify-content-lg-center">
             <div class="col-lg-11">
-             <form method="POST" action="{{url('/document/store')}}" enctype="multipart/form-data">
+             <form method="POST" action="{{url('/chef_bureau_document/store')}}" enctype="multipart/form-data">
              @csrf
               <!-- Title -->
               <div>
@@ -85,13 +85,13 @@
                   <!-- End Input Group -->
 
 <!-- Form -->
-<div class="row mb-4">
+{{-- <div class="row mb-4">
     <label for="roleLabel" class="col-sm-3 col-form-label form-label">Bureau </label>
 
     <div class="col-sm-9">
       <!-- Select -->
       <div class="tom-select-custom mb-4">
-        <select class="js-select form-select" name="bureau_id" required>
+        <select class="js-select form-select" name="bureau_id" >
             <option></option>
             @foreach ($bureaux as $bureau)
             <option value="{{ $bureau->id }}">{{ $bureau->name }}</option>
@@ -101,11 +101,11 @@
       </div>
       <!-- End Select -->
     </div>
-  </div>
+  </div> --}}
   <!-- End Form -->
 
                 <!-- Form -->
-                <div class="row mb-4">
+                {{-- <div class="row mb-4">
                     <label for="roleLabel" class="col-sm-3 col-form-label form-label">Selectioner Le chef bureau</label>
 
                     <div class="col-sm-9">
@@ -121,7 +121,7 @@
                       </div>
                       <!-- End Select -->
                     </div>
-                  </div>
+                  </div> --}}
                   <!-- End Form -->
 
 

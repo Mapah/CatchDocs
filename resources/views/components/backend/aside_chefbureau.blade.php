@@ -26,7 +26,12 @@
         @endphp
 
         <!-- Content -->
-        <div class="navbar-vertical-content">
+        @php
+                $bureau=App\Models\Bureau::where('user_id',Auth::user()->id)->first();
+            @endphp
+        <div class="navbar-vertical-content" style="background-color: lightcyan"><hr>
+            <div class="text center"><span class="text-dark text-center  text-xl" style="font-size: 25px">Chef Bureau<br>({{$bureau->name}})</span></div>
+            <hr>
           <div id="navbarVerticalMenu" class="nav nav-pills nav-vertical card-navbar-nav">
             <!-- Collapse -->
             <div class="nav-item">
@@ -50,7 +55,7 @@
             <div id="navbarVerticalMenuPagesMenu">
 
               <!-- Collapse -->
-              <div class="nav-item mt-4">
+              {{-- <div class="nav-item mt-4">
                   <a class="nav-link dropdown-toggle {{$segment1=='chef_bureau_administrations'?'active':''}}" href="#navProdus" role="button" data-bs-toggle="collapse" data-bs-target="#navProjects" aria-expanded="false" aria-controls="navProjects">
                     <i class="bi-house nav-icon"></i>
                     <span class="nav-link-title">Administrations</span>
@@ -58,9 +63,9 @@
 
                   <div id="navProjects" class="nav-collapse collapse"  data-bs-parent="#navbarVerticalMenuPagesMenu">
                     <a class="nav-link {{$segment1=='chef_bureau_administrations' && $segment2==''?'active':''}}" href="{{url('/admin_administrations')}}">Aperçu</a>
-                    {{-- <a class="nav-link {{$segment1=='administration' && $segment2=='create'?'active':''}}" href="{{url('/administration/create')}}">Nouveau Administration</a> --}}
+                    {{-- <a class="nav-link {{$segment1=='administration' && $segment2=='create'?'active':''}}" href="{{url('/administration/create')}}">Nouveau Administration</a> -}}
                   </div>
-                </div>
+                </div> --}}
                 <!-- End Collapse -->
 
               <!-- Collapse -->
@@ -97,19 +102,19 @@
             {{-- <span class="dropdown-header mt-4">Management</span>
             <small class="bi-three-dots nav-subtitle-replacer"></small> --}}
               <!-- Collapse -->
-               <div class="nav-item">
+               {{-- <div class="nav-item">
                 <a class="nav-link dropdown-toggle {{$segment1=='profile'?'active':''}}" href="#navProfile" role="button" data-bs-toggle="collapse" data-bs-target="#navProfile" aria-expanded="false" aria-controls="navProfile">
                   <i class="bi-person nav-icon"></i>
                   <span class="nav-link-title"> Utilisateurs </span>
                 </a>
 
                 <div id="navProfile" class="nav-collapse collapse " data-bs-parent="#navbarVerticalMenuPagesMenu">
-                  {{-- @hasanyrole('SUPERADMIN|ADMIN') --}}
+                  {{-- @hasanyrole('SUPERADMIN|ADMIN') -}}
                   <a class="nav-link {{$segment1=='chef_bureau_users'?'active':''}}" href="{{url('/chef_bureau_users')}}">Aperçu</a>
-                  {{-- @endhasanyrole --}}
+                  {{-- @endhasanyrole -}}
                   <a class="nav-link {{$segment1=='chef_bureau_user' && $segment2=='create'?'active':''}}" href="{{url('/chef_bureau_user/create')}}">Nouveau Utilisateurs</a>
                 </div>
-              </div>
+              </div> --}}
               <!-- End Collapse -->
 
 

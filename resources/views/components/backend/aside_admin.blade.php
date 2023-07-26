@@ -26,7 +26,13 @@
           @endphp
 
           <!-- Content -->
-          <div class="navbar-vertical-content">
+          <div class="navbar-vertical-content" style="background-color: lightcyan">
+            @php
+                $admin=App\Models\Administration::where('user_id',Auth::user()->id)->first();
+            @endphp
+            <hr>
+            <div class="text center"><span class="text-dark text-center  text-xl" style="font-size: 25px">Admin<br>({{$admin->name}})</span></div>
+            <hr>
             <div id="navbarVerticalMenu" class="nav nav-pills nav-vertical card-navbar-nav">
               <!-- Collapse -->
               <div class="nav-item">

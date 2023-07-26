@@ -23,9 +23,9 @@ class ChefBureauController extends Controller
         $user=Auth::user();
 
         $bureau=Bureau::where('user_id',$user->id)->first();
-        $administrations=Administration::where('id',$bureau->administration_id)->get();
-        return view('chef_bureau.administrations.index',[
-            'administrations'=>$administrations,
+        $bureaux=Bureau::where('administration_id',$bureau->administration_id)->get();
+        return view('chef_bureau.bureaux.index',[
+            'bureaux'=>$bureaux,
         ]);
     }
 

@@ -125,7 +125,7 @@
   <script src="{{asset('backend/js/hs.theme-appearance.js')}}"></script>
 
   <!-- ========== HEADER ========== -->
-  <header class="position-absolute top-0 start-0 end-0 mt-3 mx-3">
+  <header class="position-absolute top-0 start-0 end-0 mt-3 mx-3" >
     <div class="d-flex d-lg-none justify-content-between">
         <a href="/">
             <span class="navbar-brand-logo btn text-info text-xl" style="font-size: 80px">CATCHDOC</span>

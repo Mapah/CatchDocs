@@ -160,7 +160,6 @@
             <tr>
               <th>Libelle/Titre</th>
               <th>Admin</th>
-              <th></th>
             </tr>
             </thead>
 
@@ -181,7 +180,7 @@
                 @endif
 
               </td>
-              <td>
+              {{-- <td>
                 <a role="button" class="btn btn-white btn-sm mr-3" href="{{url('administration/edit/'.$administration->id)}}">
                   <i class="bi-pencil-fill me-1"></i> Modifier
                 </a>
@@ -189,7 +188,7 @@
                   <i class="bi-trash me-1"></i> Suprimer
                 </a>
 
-              </td>
+              </td> --}}
             </tr>
 
             @endforeach

@@ -27,6 +27,11 @@ class AdministrationController extends Controller
         ]);
 
     }
+    public function list()
+    {
+        $administrations=Administration::all();
+        return $administrations;
+    }
 
     public function create()
     {
@@ -37,7 +42,8 @@ class AdministrationController extends Controller
     public function edit($id)
     {
         $administration = administration::find($id);
-        return view('super_admin.administrations.edit',['administration'=>$administration]);
+        $users = User::where('role','ADMIN')->get();
+        return view('super_admin.administrations.edit',['administration'=>$administration, 'users'=>$users]);
 
     }
 
@@ -51,7 +57,6 @@ class AdministrationController extends Controller
 
     public function store(Request $request)
     {
-        // dd('ghh');
         $request->validate([
             'name' => 'required',
             'description' => 'required',
@@ -69,14 +74,14 @@ class AdministrationController extends Controller
     }
     public function update(Request $request)
     {
-        // dd($request->name);
         $request->validate([
             'name' => 'required',
             'description' => 'required',
         ]);
 
-        $administration = Administration::find($request->id);
-        $administration->name = $request->name;
+        $administration = administration::find($request->id);
+        $administration->name =$request->name;
+        $administration->user_id =$request->user_id;
         $administration->description = $request->description;
         $administration->save();
 
