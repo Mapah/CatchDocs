@@ -36,7 +36,7 @@
                 <div id="addUserStepProfile" class="card card-lg active">
                   <!-- Body -->
                   <div class="card-body">
-<h3>Chef Bureau: {{$bureau->user->name}}</h3>
+<h3>Chef Bureau: {{$bureau?->user?->name}}</h3>
                     <!-- Form -->
                     <div class="row mb-4">
                       <label for="firstNameLabel" class="col-sm-3 col-form-label form-label">Libelle/Titre<code>*</code></label>

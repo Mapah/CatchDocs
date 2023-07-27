@@ -155,7 +155,7 @@
             $administration=App\Models\Administration::where('user_id',Auth::user()->id)->first();
                 $bureau=App\Models\Bureau::find($document->bureau_id);
             @endphp
-            @if ($bureau->Administration_id==$administration->id)
+            @if ($bureau?->Administration_id==$administration?->id)
 
             <tr>
               <td>

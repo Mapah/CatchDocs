@@ -156,10 +156,10 @@
               {{$document->name}}
               </td>
               <td>
-                {{$document->Bureau->name}}
+                {{$document?->Bureau?->name}}
                 </td>
               <td>
-                {{$document->user->name}}
+                {{$document?->user?->name}}
               </td>
               {{$document->code}}
               <td>

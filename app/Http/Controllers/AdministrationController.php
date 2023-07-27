@@ -80,12 +80,20 @@ class AdministrationController extends Controller
         ]);
 
         $administration = administration::find($request->id);
-        $administration->name =$request->name;
+        if (!is_null($administration)){
+        $administration->name =$request?->name;
         $administration->user_id =$request->user_id;
         $administration->description = $request->description;
         $administration->save();
 
         return redirect('/administrations')->with('status','administration updated Successfully');
+
+        }
+
+        return back()->with('status','Operation failed');
+
+
+
 
     }
 
